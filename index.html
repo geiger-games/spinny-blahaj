@@ -1,15 +1,35 @@
 <!doctype html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>spinny</title>
-</head>
-<body>
-    <video controls autoplay loop>
-        <source src="blahaj-spin.mp4" type="video/mp4">
-    </video>
-    <audio controls autoplay loop>
-        <source src="xtal.flac" type="audio/x-flac">
-    </audio>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>spinny</title>
+        <style>
+            body {
+                margin: 0;
+                min-height: 100vh;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                
+                background: #312c42;
+            }
+        </style>
+    </head>
+    <body>
+        <video id="blahaj" controls autoplay loop>
+            <source src="blahaj-spin.mp4" type="video/mp4">
+        </video>
+        <audio controls autoplay loop>
+            <source src="xtal.flac" type="audio/x-flac">
+        </audio>
+        <button onclick="toggleZoomies()">zoomies</button>
+        <script>
+            function toggleZoomies() {
+                const video = document.getElementById("blahaj");
+                video.playbackRate = 4 - video.playbackRate;
+            }
+        </script>
+    </body>
 </html>
