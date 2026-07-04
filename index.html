@@ -12,7 +12,8 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                
+            }
+            body.basic {
                 background: #312c42;
             }
             body.ocean {
@@ -58,7 +59,7 @@
                 video.playbackRate = 4 - video.playbackRate;
             }
 
-            const themes = ["ocean", "sunset", "space", "pride"];
+            const themes = ["basic", "ocean", "sunset", "space", "pride"];
             let current = 0;
 
             function nextTheme() {
