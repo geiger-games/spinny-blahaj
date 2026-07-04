@@ -28,15 +28,14 @@
                 background: radial-gradient(circle, #444, #000);
             }
 
-            body.pride {
+            body.trans {
                 background: linear-gradient(
                     180deg,
-                    red,
-                    orange,
-                    yellow,
-                    green,
-                    blue,
-                    violet
+                    #5bcffa,
+                    #f5abb9,
+                    white,
+                    #f5abb9,
+                    #5bcffa
                 );
             }
         </style>
@@ -59,7 +58,7 @@
                 video.playbackRate = 4 - video.playbackRate;
             }
 
-            const themes = ["basic", "ocean", "sunset", "space", "pride"];
+            const themes = ["basic", "ocean", "sunset", "space", "trans"];
             let current = 0;
 
             function nextTheme() {
