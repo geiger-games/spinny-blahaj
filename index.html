@@ -75,7 +75,7 @@
                 const text = document.getElementById("blahajtext");
                 text.textContent = lines[Math.floor(Math.random() * lines.length)];
 
-                const utter = new SpeechSynthesisUtterance(text);
+                const utter = new SpeechSynthesisUtterance(text.textContent);
                 speechSynthesis.speak(utter);
             }
         </script>
