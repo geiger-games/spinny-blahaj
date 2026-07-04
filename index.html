@@ -41,6 +41,10 @@
         </style>
     </head>
     <body class="basic">
+        <p id="blahajtext"></p>
+
+        <button onclick="talk()">make blahaj talk!</button>
+
         <video id="blahaj" controls autoplay loop>
             <source src="blahaj-spin.mp4" type="video/mp4">
         </video>
@@ -53,17 +57,26 @@
         <button onclick="nextTheme()">next bg</button>
 
         <script>
-            function toggleZoomies() {
-                const video = document.getElementById("blahaj");
-                video.playbackRate = 4 - video.playbackRate;
-            }
-
             const themes = ["basic", "ocean", "sunset", "space", "trans"];
+            const lines = ["hello human :3", "speeeeeeen", "pls catnip", "estrowogen"];
             let current = 0;
 
             function nextTheme() {
                 document.body.className = themes[current];
                 current = (current + 1) % themes.length;
+            }
+
+            function toggleZoomies() {
+                const video = document.getElementById("blahaj");
+                video.playbackRate = 4 - video.playbackRate;
+            }
+
+            function talk() {
+                const text = document.getElementById("blahajtext");
+                text.textContent = lines[Math.floor(Math.random() * lines.length)];
+
+                const utter = new SpeechSynthesisUtterance(text);
+                speechSynthesis.speak(utter);
             }
         </script>
     </body>
