@@ -58,6 +58,7 @@
         <script>
             const themes = ["basic", "ocean", "sunset", "space", "trans"];
             const lines = ["hello human :3", "speeeeeeen", "pls catnip", "estrowogen"];
+            const ttsLines = ["hello human", "spin", "please catnip", "estrogen"];
             let current = 0;
 
             function nextTheme() {
@@ -72,9 +73,11 @@
 
             function talk() {
                 const text = document.getElementById("blahajtext");
-                text.textContent = lines[Math.floor(Math.random() * lines.length)];
+                const i = Math.floor(Math.random() * lines.length);
+                text.textContent = lines[i];
 
-                const utter = new SpeechSynthesisUtterance(text.textContent);
+                const utter = new SpeechSynthesisUtterance(ttsLines[i]);
+                utter.pitch = 1.5;
                 speechSynthesis.speak(utter);
             }
         </script>
