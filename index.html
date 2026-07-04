@@ -15,20 +15,55 @@
                 
                 background: #312c42;
             }
+            body.ocean {
+                background: linear-gradient(#6ec6ff, #003366);
+            }
+
+            body.sunset {
+                background: linear-gradient(#ff8a5b, #8a2be2);
+            }
+
+            body.space {
+                background: radial-gradient(circle, #222, #000);
+            }
+
+            body.pride {
+                background: linear-gradient(
+                    180deg,
+                    red,
+                    orange,
+                    yellow,
+                    green,
+                    blue,
+                    violet
+                );
+            }
         </style>
     </head>
     <body>
         <video id="blahaj" controls autoplay loop>
             <source src="blahaj-spin.mp4" type="video/mp4">
         </video>
+
         <audio controls autoplay loop>
             <source src="xtal.flac" type="audio/x-flac">
         </audio>
+
         <button onclick="toggleZoomies()">zoomies</button>
+        <button onclick="nextTheme()">next bg</button>
+
         <script>
             function toggleZoomies() {
                 const video = document.getElementById("blahaj");
                 video.playbackRate = 4 - video.playbackRate;
+            }
+
+            const themes = ["ocean", "sunset", "space", "pride"];
+            let current = 0;
+
+            function nextTheme() {
+                document.body.className = themes[current];
+                current = (current + 1) % themes.length;
             }
         </script>
     </body>
